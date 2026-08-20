@@ -22,24 +22,18 @@ export function ProjectsPage() {
         </div>
       </header>
       <section className="container -mt-8 grid gap-5 pb-20 lg:grid-cols-3">
-        {projects.map((project, index) => (
-          <article key={project.title} className={`overflow-hidden rounded-2xl border bg-white shadow-sm ${index === 1 ? 'border-orange-400 shadow-orange-100' : 'border-slate-100'}`}>
-            <div className={`relative flex h-44 items-center justify-center overflow-hidden bg-gradient-to-br ${project.color}`}>
-              <div className="absolute inset-0 tech-lines opacity-30" />
-              <div className="relative w-4/5 rounded-xl border border-white/20 bg-slate-950/70 p-3 shadow-2xl">
-                <div className="mb-3 flex gap-1">
-                  <span className="h-1.5 w-1.5 rounded-full bg-red-400" />
-                  <span className="h-1.5 w-1.5 rounded-full bg-yellow-400" />
-                  <span className="h-1.5 w-1.5 rounded-full bg-green-400" />
-                </div>
-                <div className="grid grid-cols-[.8fr_1.2fr] gap-2">
-                  <div className="h-20 rounded bg-white/10" />
-                  <div className="space-y-2">
-                    <div className="h-3 w-2/3 rounded bg-orange-400/70" />
-                    <div className="h-10 rounded bg-white/10" />
-                  </div>
-                </div>
-              </div>
+        {projects.map((project) => (
+          <article key={project.title} className="course-card overflow-hidden rounded-2xl border bg-white shadow-sm">
+            <div className="relative h-44 overflow-hidden bg-slate-950">
+              <img
+                src={project.image}
+                alt={project.title}
+                loading="lazy"
+                width={1024}
+                height={576}
+                className="h-full w-full object-cover"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent" />
             </div>
             <div className="p-5">
               <h2 className="text-lg font-black text-slate-950">{project.title}</h2>

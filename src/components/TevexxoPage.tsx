@@ -419,7 +419,7 @@ function CourseCard({ course }: { course: Course }) {
     <motion.article
       variants={reveal}
       whileHover={{ y: -6 }}
-      className={`relative flex min-h-[330px] flex-col rounded-2xl border bg-white p-5 shadow-sm transition-shadow hover:shadow-xl ${course.featured ? 'border-orange-400 shadow-orange-100' : 'border-slate-100'}`}
+      className="course-card group relative flex min-h-[330px] flex-col rounded-2xl border bg-white p-5 shadow-sm" 
     >
       {course.featured && <span className="absolute right-4 top-4 rounded-full bg-orange-500 px-3 py-1 text-[9px] font-black tracking-wider text-white">POPULAR</span>}
       <div className={`mb-5 flex h-12 w-12 items-center justify-center rounded-xl text-white shadow-lg ${course.iconClass}`}>
@@ -439,7 +439,7 @@ function CourseCard({ course }: { course: Course }) {
         <span className="flex items-center gap-1 text-xs font-bold text-orange-500">
           <Star size={13} fill="currentColor" /> {course.rating} <span className="font-normal text-slate-400">({course.reviews})</span>
         </span>
-        <AppLink href="/courses" className={`flex h-8 w-8 items-center justify-center rounded-full border ${course.featured ? 'border-orange-500 bg-orange-500 text-white' : 'border-slate-200 text-slate-600'}`} aria-label={`Explore ${course.title}`}>
+        <AppLink href="/courses" className="flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition-colors group-hover:border-orange-500 group-hover:bg-orange-500 group-hover:text-white"  aria-label={`Explore ${course.title}`}>
           <ArrowRight size={15} />
         </AppLink>
       </div>
@@ -479,33 +479,23 @@ function Projects() {
           action={<AppLink href="/projects" className="hidden items-center gap-2 text-xs font-bold text-slate-600 sm:flex">View All Projects <ArrowRight size={14} /></AppLink>}
         />
         <motion.div {...sectionMotion} className="grid gap-5 lg:grid-cols-3">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <motion.article
               variants={reveal}
               whileHover={{ y: -6 }}
               key={project.title}
-              className={`overflow-hidden rounded-2xl border bg-white shadow-sm ${index === 1 ? 'border-orange-400 shadow-orange-100' : 'border-slate-100'}`}
+              className="course-card overflow-hidden rounded-2xl border bg-white shadow-sm" 
             >
-              <div className={`relative flex h-44 items-center justify-center overflow-hidden bg-gradient-to-br ${project.color}`}>
-                <div className="absolute inset-0 tech-lines opacity-30" />
-                <div className="relative w-4/5 rounded-xl border border-white/20 bg-slate-950/70 p-3 shadow-2xl">
-                  <div className="mb-3 flex gap-1">
-                    <span className="h-1.5 w-1.5 rounded-full bg-red-400" />
-                    <span className="h-1.5 w-1.5 rounded-full bg-yellow-400" />
-                    <span className="h-1.5 w-1.5 rounded-full bg-green-400" />
-                  </div>
-                  <div className="grid grid-cols-[0.8fr_1.2fr] gap-2">
-                    <div className="h-20 rounded bg-white/10" />
-                    <div className="space-y-2">
-                      <div className="h-3 w-2/3 rounded bg-orange-400/70" />
-                      <div className="h-10 rounded bg-white/10" />
-                      <div className="flex gap-2">
-                        <div className="h-2 w-1/3 rounded bg-white/30" />
-                        <div className="h-2 w-1/4 rounded bg-white/20" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div className="relative h-44 overflow-hidden bg-slate-950">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  loading="lazy"
+                  width={1024}
+                  height={576}
+                  className="h-full w-full object-cover transition-transform duration-500 hover:scale-[1.03]"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent" />
                 <span className="absolute left-4 top-4 rounded bg-orange-500 px-2 py-1 text-[9px] font-black text-white">FEATURED</span>
               </div>
               <div className="p-5">

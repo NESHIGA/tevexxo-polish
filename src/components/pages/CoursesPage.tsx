@@ -26,7 +26,7 @@ export function CoursesPage() {
           {courses.map((course) => {
             const Icon = course.icon;
             return (
-              <article key={course.title} className={`flex min-h-[300px] flex-col rounded-2xl border bg-white p-6 shadow-sm ${course.featured ? 'border-orange-400 shadow-orange-100' : 'border-slate-100'}`}>
+              <article key={course.title} className="course-card flex min-h-[300px] flex-col rounded-2xl border bg-white p-6 shadow-sm">
                 <div className={`mb-5 flex h-12 w-12 items-center justify-center rounded-xl text-white shadow-lg ${course.iconClass}`}>
                   <Icon size={24} />
                 </div>

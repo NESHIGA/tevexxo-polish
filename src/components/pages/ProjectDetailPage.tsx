@@ -30,8 +30,15 @@ export function ProjectDetailPage({ slug }: { slug: string }) {
       </header>
       <section className="container -mt-8 pb-20">
         <div className={`relative mb-6 flex h-64 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br ${project.color}`}>
-          <div className="absolute inset-0 tech-lines opacity-30" />
-          <Logo className="h-20 w-20" />
+          <img
+            src={project.image}
+            alt={project.title}
+            width={1024}
+            height={576}
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="pointer-events-none absolute inset-0 bg-slate-950/40" />
+          <Logo className="relative h-20 w-20" />
         </div>
         <div className="grid gap-6 lg:grid-cols-[1.5fr_1fr]">
           <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
