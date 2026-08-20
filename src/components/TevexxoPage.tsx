@@ -231,9 +231,9 @@ function Navbar({ onSearch, onDemo }: { onSearch: () => void; onDemo: () => void
   return (
     <header className="absolute inset-x-0 top-0 z-40">
       <div className="container flex h-20 items-center justify-between">
-        <AppLink href="/" className="inline-flex items-center gap-2" aria-label="Tevexxo home">
-          <Logo className="h-9 w-9" priority />
-          <span className="text-lg font-extrabold tracking-tight text-white">Tevexxo</span>
+        <AppLink href="/" className="inline-flex shrink-0 items-center gap-2 leading-none" aria-label="Tevexxo home">
+          <Logo className="h-8 w-8" priority />
+          <span className="text-lg font-extrabold leading-none tracking-tight text-white">Tevexxo</span>
         </AppLink>
         <nav className="hidden items-center gap-6 lg:flex">
           {navItems.map((item, index) => (
@@ -616,7 +616,7 @@ function CTA() {
         <div className="cta-panel relative overflow-hidden rounded-[26px] px-6 py-8 sm:px-12 sm:py-10">
           <div className="relative z-10 flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div>
-              <div className="mb-3 flex items-center gap-3">
+              <div className="mb-3 flex items-center gap-3 leading-none">
                 <Logo className="h-8 w-8" />
                 <span className="text-sm font-bold text-orange-500">TEVEXXO</span>
               </div>
@@ -696,9 +696,9 @@ function Footer() {
     <footer className="bg-slate-950 text-slate-400">
       <div className="container grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[1.5fr_repeat(4,1fr)]">
         <div>
-          <AppLink href="/" className="inline-flex items-center gap-2" aria-label="Tevexxo home">
-            <Logo className="h-9 w-9" />
-            <span className="text-lg font-extrabold tracking-tight text-white">Tevexxo</span>
+          <AppLink href="/" className="inline-flex shrink-0 items-center gap-2 leading-none" aria-label="Tevexxo home">
+            <Logo className="h-8 w-8" />
+            <span className="text-lg font-extrabold leading-none tracking-tight text-white">Tevexxo</span>
           </AppLink>
           <p className="mt-5 max-w-xs text-xs leading-5">Empowering future tech leaders with industry-relevant training and real-world learning experiences.</p>
           <div className="mt-5 flex gap-2">
