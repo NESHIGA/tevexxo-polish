@@ -14,8 +14,9 @@ export function AppLink({ href, children, ...rest }: AppLinkProps) {
   const isRouted = href.startsWith("/") && !href.startsWith("//");
 
   if (isRouted) {
+    const linkProps = rest as Record<string, unknown>;
     return (
-      <Link to={href} {...rest}>
+      <Link to={href} {...linkProps}>
         {children}
       </Link>
     );
